@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { BooksComponent } from './books.component';
@@ -8,6 +8,11 @@ import { BooksComponent } from './books.component';
   declarations: [BooksComponent],
   imports: [
     CommonModule,
+    /**
+     * 🚀 HINT: Lazy load the NgOptimizedImage standalone module.
+     */
+    // NgOptimizedImage,
+
     /**
      * 🚀 HINT: Fallback route to enable lazy loaded chunks.
      */

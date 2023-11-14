@@ -20,25 +20,24 @@
     <use xlink:href="#info-fill" />
   </svg>
   <div>
-    THERE ARE NO BOOKS OR DOGS TO SEE HERE. WAS A JOKE
+    Welcome OBSERVER 👀
   </div>
 </div>
 
-<!-- 🚀 HINT: Images should also be lazy loaded -->
+<div class="c-container p-5">
+  🚔 EMPTY CONTENT PLACEHOLDER 🚔
+</div>
 
-<ng-container *ngFor="let dog of dogImages$ | async; index as i">
-    <!-- SIMPLE CASE -->
-    <!-- <img [src]="dog" alt="test" > -->
+<div class="my-4" #observerChildWrapper>
+  <h4>MY LAZY LOAD COMPONENT</h4>
 
-    <!-- LAZY ATTRIBUTE -->
-    <!-- <img [src]="dog" loading="lazy" alt=""> -->
+  <!-- LAZY LOAD COMPONENT ONLY IF VIEW REACHED -->
 
-    <!-- 🚀 Lazy LOADING -->
-    <!-- <img [src]="dog" alt="" loading="lazy" height="400" width="400"> -->
+  <ng-container #observerChildContainer></ng-container>
 
-    <!-- 🎈 Built In technique from Angular  -->
-    <!-- <img [ngSrc]="dog" alt="" width="400" height="400"> -->
+  <!-- Lazy Load script -->
+  <button class="btn btn-primary" (click)="downloadExcelFile()">
+    DOWNLOAD REPORT
+  </button>
+</div>
 
-    <!-- DEBUG STUFF -->
-    <!-- {{ dog }} -->
-</ng-container>

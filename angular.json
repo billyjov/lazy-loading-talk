@@ -33,9 +33,20 @@
                 "input": "src/styles/themes/dark.css",
                 "bundleName": "dark-mode-css",
                 "inject": false
+              },
+              {
+                "input": "src/assets/css/mobile.css",
+                "bundleName": "mobile-css",
+                "inject": false
               }
             ],
-            "scripts": []
+            "scripts": [
+               {
+                 "input": "src/assets/js/mobile.js",
+                 "bundleName": "mobile-js",
+                 "inject": false
+               }
+            ]
           },
           "configurations": {
             "production": {

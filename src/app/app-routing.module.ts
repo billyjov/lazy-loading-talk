@@ -14,6 +14,30 @@ const routes: Route[] = [
     loadChildren: () =>
       import('./features/books/books.module').then((m) => m.BooksModule),
   },
+  // {
+  //   path: 'standalone',
+  //   loadComponent: () =>
+  //     import('./features/standalone-sticker/standalone-sticker.component').then(
+  //       m => m.StandaloneStickerComponent
+  //     ),
+  // },
+
+  /**
+   * 🚀 HINT: Use default export to lazy load component or module.
+   * @see: https://github.com/angular/angular/pull/47586
+   */
+  {
+    path: 'standalone',
+    loadComponent: () =>
+      import('./features/standalone-sticker/standalone-sticker.component'),
+  },
+  {
+    path: 'observer',
+    loadComponent: () =>
+      import('./features/observer/observer.component').then(
+        (m) => m.ObserverComponent
+      ),
+  },
   {
     path: '',
     component: HomeComponent,

@@ -29,5 +29,28 @@
   I want to appear 😎
 </button>
 
-<!-- Lazy loading -->
+<button type="button" class="btn btn-info mx-2" (click)="loadSuperPowers()">
+  Discover Superpower 🐱‍🏍
+</button>
+
+
+
+<!-- Lazy loading component -->
 <ng-container #homeContainer></ng-container>
+
+
+<!-- Lazy loading superpowers -->
+<ng-container *ngIf="superpowers.length">
+  <ng-container *ngFor="let superpower of superpowers">
+    <div class="alert alert-success d-flex align-items-center my-4"
+      role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+        aria-label="Success:">
+        <use xlink:href="#check-circle-fill" />
+      </svg>
+      <div>
+        {{ superpower }}
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

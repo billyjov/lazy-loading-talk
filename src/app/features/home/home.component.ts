@@ -1,6 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import {
+  Component,
+  Injector,
+  OnInit,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { User } from './models';
 
 @Component({
@@ -9,12 +16,14 @@ import { User } from './models';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  public superpowers: string[] = [];
+
   @ViewChild('homeContainer', { read: ViewContainerRef })
   private homeViewContainerRef!: ViewContainerRef;
 
   private users$!: Observable<User[]>;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private injector: Injector) {}
 
   ngOnInit(): void {
     this.users$ = this.http.get<User[]>(
@@ -35,7 +44,21 @@ export class HomeComponent implements OnInit {
     if (this.homeViewContainerRef.length === 0) {
       const ref = this.homeViewContainerRef.createComponent(SingletonComponent);
       ref.instance.users$ = this.users$;
-    }
 
+      // 🍿 TIP: Also have access to changeDetectorRef
+      // ref.changeDetectorRef.detectChanges();
+
+      // 🍿 TIP: Also have access to @Input() bindings: V14+
+      ref.setInput('componentName', 'Home Widget Singleton');
+    }
+  }
+
+  public loadSuperPowers(): void {
+    // 🍿 TIP: Lazy load services
+    import('../shared/services/superpower.service').then((ref) => {
+      const service = this.injector.get(ref.SuperpowerService);
+
+      this.superpowers = service.getSuperpowers();
+    });
   }
 }

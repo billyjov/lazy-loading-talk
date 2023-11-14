@@ -11,12 +11,12 @@ import { BooksComponent } from './books.component';
     /**
      * 🚀 HINT: Fallback route to enable lazy loaded chunks.
      */
-    // RouterModule.forChild([
-    //   {
-    //     path: '',
-    //     component: BooksComponent,
-    //   },
-    // ]),
+    RouterModule.forChild([
+      {
+        path: '',
+        component: BooksComponent,
+      },
+    ]),
   ],
 })
 export class BooksModule {}

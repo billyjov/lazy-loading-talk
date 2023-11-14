@@ -7,12 +7,12 @@ import { HomeComponent } from './features/home/home.component';
 const routes: Route[] = [
   {
     path: 'books',
-    component: BooksComponent
+    // component: BooksComponent
     /**
      * 🚀 HINT: Lazy load module to avoid big chunks
      */
-    // loadChildren: () =>
-    //   import('./features/books/books.module').then((m) => m.BooksModule),
+    loadChildren: () =>
+      import('./features/books/books.module').then((m) => m.BooksModule),
   },
   {
     path: '',

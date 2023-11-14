@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
     HttpClientModule,
 
     // Without lazy loading.
-    BooksModule,
+    // BooksModule,
     HomeModule,
     AppRoutingModule,
   ],

@@ -32,7 +32,10 @@ export class HomeComponent implements OnInit {
      */
     // const { CardComponent } = await import('../card/card.component');
 
-    const ref = this.homeViewContainerRef.createComponent(SingletonComponent);
-    ref.instance.users$ = this.users$;
+    if (this.homeViewContainerRef.length === 0) {
+      const ref = this.homeViewContainerRef.createComponent(SingletonComponent);
+      ref.instance.users$ = this.users$;
+    }
+
   }
 }

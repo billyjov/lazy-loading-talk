@@ -7,7 +7,7 @@ import { SingletonComponent } from './singleton/singleton.component';
 @NgModule({
   declarations: [
     HomeComponent,
-    SingletonComponent
+    // SingletonComponent
   ],
   imports: [
     CommonModule

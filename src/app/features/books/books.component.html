@@ -26,6 +26,7 @@
 
 <!-- 🚀 HINT: Images should also be lazy loaded -->
 
-<!-- <ng-container *ngFor="let dog of dogImages$ | async; index as i">
-  <img [src]="dog">
-</ng-container> -->
+<ng-container *ngFor="let dog of dogImages$ | async; index as i">
+  <img [src]="dog" loading="lazy" height="400" width="400">
+  <!-- {{ dog }} -->
+</ng-container>

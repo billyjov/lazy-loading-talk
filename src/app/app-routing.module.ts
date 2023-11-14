@@ -39,6 +39,13 @@ const routes: Route[] = [
       ),
   },
   {
+    path: 'defer',
+    loadComponent: () =>
+      import('./features/defer/defer.component').then(
+        (m) => m.DeferComponent
+      ),
+  },
+  {
     path: '',
     component: HomeComponent,
   },

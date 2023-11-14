@@ -1,1 +1,10 @@
-<p>defer works!</p>
+<div class="container">
+  @defer (when isVisible) {
+    <app-defer-child-1 />
+  }
+
+  <button (click)="toggleVisibility()" class="btn btn-info">
+    Load Component
+  </button>
+
+</div>

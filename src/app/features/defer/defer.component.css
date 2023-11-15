@@ -1,0 +1,14 @@
+.sub-container {
+  bottom: 0;
+  right: 0;
+  border: 2px dashed red;
+  width: 100%;
+}
+
+.custom-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  border: 2px dashed blue;
+}

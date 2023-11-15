@@ -5,7 +5,20 @@
   {{ 'This is a text, I need dot instead of comma' | removeComma }}
   <hr>
   }
+  <!-- @error {
+  <div class="alert alert-danger" role="alert">
+    Something went wrong!
+  </div>
+  } -->
 
+  <!-- 🍿 HINT: use placeholder -->
+  <!-- @placeholder {
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  } -->
+
+  <br>
   <button (click)="toggleVisibility()" class="btn btn-sm btn-primary">
     Load Component
   </button>
@@ -27,3 +40,23 @@
     Load Component
   </button>
 </div> -->
+
+
+<!-- 🪐HINT: viewport + placeholder -->
+
+<!-- <div class="custom-container">
+  Just a container placeholder 😂😂
+</div>
+
+@defer (on viewport) {
+<div class="sub-container">
+  <app-defer-child-1 />
+  <app-defer-child-2 />
+</div>
+} @placeholder {
+<div class="sub-container">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+} -->

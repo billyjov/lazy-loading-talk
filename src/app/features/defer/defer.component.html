@@ -1,10 +1,29 @@
 <div class="container">
   @defer (when isVisible) {
-    <app-defer-child-1 />
+  <app-defer-child-1 />
+
+  {{ 'This is a text, I need dot instead of comma' | removeComma }}
+  <hr>
   }
 
-  <button (click)="toggleVisibility()" class="btn btn-info">
+  <button (click)="toggleVisibility()" class="btn btn-sm btn-primary">
     Load Component
   </button>
-
 </div>
+
+<hr>
+<!-- 🪐HINT: interaction -->
+
+<!-- <div class="container">
+  @defer (on interaction(btn)) {
+  <app-defer-child-1 />
+  <app-defer-child-2 />
+
+  {{ 'This is a text, I need dot instead of comma' | removeComma }}
+  <hr>
+  }
+
+  <button #btn class="btn btn-sm btn-primary">
+    Load Component
+  </button>
+</div> -->
